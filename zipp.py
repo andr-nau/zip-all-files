@@ -3,20 +3,16 @@ import os
 import sys
 
 main_path = os.getcwd()  #'D:\\test'
-print(main_path)
-print(os.path.splitdrive(main_path)[1])
 
+# Check if it is root directory. Can be dangerous.
 if os.path.splitdrive(main_path)[1] == '\\':
     root = input('This is root directory. Are you sure to archive all files? y/n: ')
     if root in ('y', 'Y'):
         pass
     else:
         sys.exit()
-    
-
 
 files_to_arch = []
-
 
 def listing_to_zip(path):
     """
